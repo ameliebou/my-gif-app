@@ -24,6 +24,12 @@ class App extends Component {
     });
   }
 
+  focusedGif = (id) => {
+    this.setState({
+      focusedGifId: id
+    });
+  }
+
   render() {
     return (
       <div className="window">
@@ -36,7 +42,7 @@ class App extends Component {
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs}/>
+          <GifList gifs={this.state.gifs} focusedGif={this.focusedGif}/>
         </div>
       </div>
     );
